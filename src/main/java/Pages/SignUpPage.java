@@ -34,13 +34,28 @@ public class SignUpPage extends BasePage {
 
     private void fillSignUpFields(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(
-                sendKeysToElement(SignUpLocators.FULLNAME, "123456")));
+                sendKeysToElement(SignUpLocators.FULLNAME, "Sivan")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(
                 sendKeysToElement(SignUpLocators.EMAIL, "sivanbon2+1@gmail.com")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(
-                sendKeysToElement(SignUpLocators.PASSWORD, "A123456789")));
+                sendKeysToElement(SignUpLocators.PASSWORD, "Sivan12345")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(
-                sendKeysToElement(SignUpLocators.PASSWORDAUTHENTICATION, "A123456789")));
+                sendKeysToElement(SignUpLocators.PASSWORDAUTHENTICATION, "Sivan12345")));
+    }
+
+    public String getFirstName(){
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(SignUpLocators.FULLNAME)).getText();
+    }
+    public String getEmail(){
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(SignUpLocators.EMAIL)).getText();
+    }
+
+    public String getPassword(){
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(SignUpLocators.PASSWORD)).getText();
+    }
+
+    public String getAutPassword(){
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(SignUpLocators.PASSWORDAUTHENTICATION)).getText();
     }
 
 }
