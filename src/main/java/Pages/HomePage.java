@@ -15,11 +15,10 @@ public class HomePage extends BasePage  {
     private WebDriverWait wait;
 
     public void pickFromHome(){
-        pickPrice(2);
-        pickArea(3);
-        pickCategory(3);
+        pickPrice(6);
+        pickArea(2);
+        pickCategory(2);
         findMeGiftBtn();
-
     }
 
     public HomePage(){
