@@ -1,15 +1,29 @@
+import BaseClasses.BuyConfig;
+import Pages.HomePage;
 import Pages.SignUpPage;
 import org.junit.Test;
 
 public class SignUpTest {
     @Test
-    public void test01(){
+    public void test01_signUp() {
         SignUpPage signUp = new SignUpPage();
-        signUp.signUp();
-        signUp.getFirstName().equals("Sivan");
-        signUp.getEmail().equals("sivanbon2+1@gmail.com");
-        signUp.getPassword().equals("Sivan12345");
-        signUp.getAutPassword().equals("Sivan12345");
+        signUp.completeSignUp();
+ //       assert signUp.getFirstName().isEmpty();
+        //System.out.println(signUp.getFirstName());
+//        assert signUp.getFirstName().equals("Sivan");
+//        //assert signUp.getEmail().equals("sivanbon2+1@gmail.com");
+//        assert signUp.getPassword().equals("Sivan12345");
+//        assert signUp.getAutPassword().equals("Sivan12345");
 
     }
+
+    @Test
+    public void test02_homePage() {
+        HomePage homePage = new HomePage();
+        homePage.pickFromHome();
+        System.out.println(homePage.getUrl());
+        assert homePage.getUrl().equals("https://buyme.co.il/search?budget=2&category=22&region=9");
+    }
+
+
 }

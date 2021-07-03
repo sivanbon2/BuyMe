@@ -1,8 +1,8 @@
 package Locators;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
+//SignUp page locators
 public class SignUpLocators {
 
     public static final By NAVBARBUTTONS = new By.ByCssSelector("ul[class=\"nav-bar buttons\"]");
@@ -19,13 +19,7 @@ public class SignUpLocators {
 
     public static final By PASSWORDAUTHENTICATION = new By.ByXPath("//input[contains(@placeholder, 'אימות סיסמה')]");
 
-    public static final By REGISTRATIONBUTTON = new By.ByCssSelector("span[class=\"text-link theme\"]");
-
-
-
-
-
-
+    public static final By REGISTRATIONBUTTON = new By.ByXPath("//button[@type=\"submit\"][@class=\"ember-view bm-btn no-reverse main md stretch\"]");
 
 
 }
