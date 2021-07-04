@@ -18,7 +18,6 @@ public class SignUpPage extends BasePage {
     public void completeSignUp(){
         clickOnSignUp();
         fillSignUpFields();
-        clickOnRegistrationButton();
     }
 
     public SignUpPage(){
@@ -51,19 +50,19 @@ public class SignUpPage extends BasePage {
     }
 
     public String getFirstName(){
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(SignUpLocators.FULLNAME)).getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(SignUpLocators.FULLNAME)).getAttribute("value");
     }
 
     public String getEmail(){
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(SignUpLocators.EMAIL)).getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(SignUpLocators.EMAIL)).getAttribute("value");
     }
 
     public String getPassword(){
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(SignUpLocators.PASSWORD)).getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(SignUpLocators.PASSWORD)).getAttribute("value");
     }
 
     public String getAutPassword(){
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(SignUpLocators.PASSWORDAUTHENTICATION)).getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(SignUpLocators.PASSWORDAUTHENTICATION)).getAttribute("value");
     }
 
 
