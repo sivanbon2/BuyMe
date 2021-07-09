@@ -2,34 +2,21 @@ package Pages;
 
 import BaseClasses.BasePage;
 import BaseClasses.BaseWebdriver;
-
+import BaseClasses.BuyConfig;
 import Locators.SenderAndReceiverInfoLocators;
 
 import org.openqa.selenium.WebDriver;
-
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.time.Duration;
 
-import static org.openqa.selenium.support.locators.RelativeLocator.withTagName;
+
 
 public class SenderAndReceiverInfo extends BasePage {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    BuyConfig conf = new BuyConfig();
 
     public SenderAndReceiverInfo(){
         this.driver = BaseWebdriver.getDriverInstance();
@@ -45,8 +32,10 @@ public class SenderAndReceiverInfo extends BasePage {
         chooseEvent();
         writeBlessing();
         uploadImage();
+        Thread.sleep(3000);
         clickContinue();
-
+        clickOnSendNow();
+        sendByEmail();
     }
 
 
@@ -74,10 +63,24 @@ public class SenderAndReceiverInfo extends BasePage {
 
     }
 
-    private void clickContinue()throws InterruptedException{
-        Thread.sleep(3000);
+    private void clickContinue(){
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(SenderAndReceiverInfoLocators.CONTINUE_BUTTON));
         clickElement(SenderAndReceiverInfoLocators.CONTINUE_BUTTON);
+    }
+
+    private void clickOnSendNow(){
+        clickElement(SenderAndReceiverInfoLocators.SEND_NOW);
+
+    }
+
+    private void sendByEmail(){
+        wait.until(ExpectedConditions.elementToBeClickable(
+               clickElement(SenderAndReceiverInfoLocators.BY_EMAIL)));
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                sendKeysToElement(SenderAndReceiverInfoLocators.EMAIL,conf.getSaltString() + "@gmail.com")));
+
     }
 
 }
