@@ -1,4 +1,4 @@
-import BaseClasses.BuyConfig;
+
 import Pages.HomePage;
 import Pages.PickBusiness;
 import Pages.SenderAndReceiverInfo;
@@ -35,8 +35,10 @@ public class SignUpTest {
     @Test
     public void test03_sendAndReceived() throws InterruptedException {
         SenderAndReceiverInfo sai = new SenderAndReceiverInfo();
+        sai.receiver();
+        Assert.assertEquals(sai.getReceiverName(),"Sivan");
         sai.senderAndReceiver();
-
+        Assert.assertEquals(sai.getSenderName(),"Sivan ");
 
     }
 

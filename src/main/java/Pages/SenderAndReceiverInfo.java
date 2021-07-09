@@ -24,11 +24,6 @@ public class SenderAndReceiverInfo extends BasePage {
     }
 
     public void senderAndReceiver() throws InterruptedException {
-        buyMeGift();
-
-    }
-    private void buyMeGift() throws InterruptedException {
-        receiverName();
         chooseEvent();
         writeBlessing();
         uploadImage();
@@ -36,8 +31,11 @@ public class SenderAndReceiverInfo extends BasePage {
         clickContinue();
         clickOnSendNow();
         sendByEmail();
-    }
 
+    }
+    public void receiver()  {
+        receiverName();
+    }
 
     private void receiverName(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(
@@ -81,6 +79,13 @@ public class SenderAndReceiverInfo extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(
                 sendKeysToElement(SenderAndReceiverInfoLocators.EMAIL,conf.getSaltString() + "@gmail.com")));
 
+    }
+    public String getReceiverName(){
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(SenderAndReceiverInfoLocators.RECEIVER_NAME)).getAttribute("value");
+    }
+
+    public String getSenderName(){
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(SenderAndReceiverInfoLocators.SENDER_NAME)).getAttribute("value");
     }
 
 }

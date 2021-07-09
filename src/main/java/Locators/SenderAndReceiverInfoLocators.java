@@ -12,7 +12,7 @@ public class SenderAndReceiverInfoLocators {
     public static final By SEND_NOW = new By.ByXPath("//div[@gtm='עכשיו']//*[name()='svg']");
     public static final By BY_EMAIL = new By.ByXPath("//*[name()='svg' and @gtm=\"method-email\"]");
     public static final By EMAIL = new By.ByXPath("//input[@id=\"email\"]");
-    public static final By SENDER = new By.ByXPath("");
+    public static final By SENDER_NAME = new By.ByXPath("//div/label[@class=\"ember-view bm-field bm-input filled blur md with-label\"]/input[@class=\"ember-view ember-text-field\"]");
 
     public static By EVENT(int index) {
         return new By.ByXPath("//div[@class=\"dropdown\"]/ul/li["+index+"]");
