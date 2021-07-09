@@ -1,5 +1,4 @@
 package Locators;
-
 import org.openqa.selenium.By;
 
 //SignUp page locators

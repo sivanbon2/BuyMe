@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class BasePage {
+
     // Click on Element by one of the locators
     public By clickElement(By locator) {
         getWebElement(locator).click();
@@ -21,5 +22,6 @@ public class BasePage {
 
         return BaseWebdriver.getDriverInstance().findElement(locator);
     }
+
 
 }
