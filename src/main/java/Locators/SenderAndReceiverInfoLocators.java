@@ -17,9 +17,6 @@ public class SenderAndReceiverInfoLocators {
     public static By EVENT(int index) {
         return new By.ByXPath("//div[@class=\"dropdown\"]/ul/li["+index+"]");
 
-
-
     }
 
-    ////
 }

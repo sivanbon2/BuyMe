@@ -33,13 +33,12 @@ public class SignUpTest {
     }
 
     @Test
-    public void test03_sendAndReceived() throws InterruptedException {
+    public void test04_sendAndReceived() throws InterruptedException {
         SenderAndReceiverInfo sai = new SenderAndReceiverInfo();
         sai.receiver();
         Assert.assertEquals(sai.getReceiverName(),"Sivan");
         sai.senderAndReceiver();
         Assert.assertEquals(sai.getSenderName(),"Sivan ");
-
     }
 
 }

@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 //Home Page Locators
 public class HomeLocators {
 
-    public static final By DROPDOWNS = new By.ByCssSelector("//form[@class=\"form ember-view\"]");
 
     public static final By AMOUNT_DROPDOWN = new By.ByXPath("//form/div/a/span[contains(text(),\"סכום\")]");
 
