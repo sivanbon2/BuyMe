@@ -2,7 +2,7 @@ package Pages;
 
 import BaseClasses.BasePage;
 import BaseClasses.BaseWebdriver;
-import BaseClasses.BuyConfig;
+import Utils.BuyMeUtils;
 import Locators.SenderAndReceiverInfoLocators;
 
 import org.openqa.selenium.WebDriver;
@@ -16,7 +16,7 @@ public class SenderAndReceiverInfo extends BasePage {
 
     private WebDriver driver;
     private WebDriverWait wait;
-    BuyConfig conf = new BuyConfig();
+    BuyMeUtils conf = new BuyMeUtils();
 
     public SenderAndReceiverInfo(){
         this.driver = BaseWebdriver.getDriverInstance();

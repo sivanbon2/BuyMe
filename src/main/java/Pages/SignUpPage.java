@@ -1,6 +1,6 @@
 package Pages;
 
-import BaseClasses.BuyConfig;
+import Utils.BuyMeUtils;
 import BaseClasses.BasePage;
 import BaseClasses.BaseWebdriver;
 import Locators.SignUpLocators;
@@ -13,7 +13,7 @@ import java.time.Duration;
 public class SignUpPage extends BasePage {
     private WebDriver driver;
     private WebDriverWait wait;
-    BuyConfig conf = new BuyConfig();
+    BuyMeUtils conf = new BuyMeUtils();
 
     public void completeSignUp(){
         clickOnSignUp();

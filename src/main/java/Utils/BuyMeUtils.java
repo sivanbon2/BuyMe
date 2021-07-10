@@ -1,8 +1,8 @@
-package BaseClasses;
+package Utils;
 
 import java.util.Random;
 
-public class BuyConfig {
+public class BuyMeUtils {
 //Conf Method that we can use in any class
 
     public String getSaltString() {
