@@ -38,8 +38,16 @@ public class BasePage {
     //Get Element
     private WebElement getWebElement(By locator) {
 
-        return BaseWebdriver.getDriverInstance().findElement(locator);
-    }
+        try {
+            WebElement findLocator = BaseWebdriver.getDriverInstance().findElement(locator);
+            System.out.println(findLocator);
 
+        } catch (NoSuchElementException e) {
+            String timeNow = String.valueOf(System.currentTimeMillis());
+            ReportUtils.test.info("Element Was Not Found", MediaEntityBuilder.createScreenCaptureFromPath(takeScreenShot(timeNow)).build());
+        }
+        return BaseWebdriver.getDriverInstance().findElement(locator);
+
+    }
 
 }
