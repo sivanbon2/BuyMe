@@ -14,9 +14,7 @@ import org.junit.runners.MethodSorters;
 import static BaseClasses.BaseWebdriver.takeScreenShot;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class SignUpTest {
-
-    ReportUtils reports = new ReportUtils();
+public class BuyMeTest {
 
     @Test
     public void test01signUp() {
@@ -28,10 +26,10 @@ public class SignUpTest {
             Assert.assertEquals(signUp.getPassword(), "Sivan12345");
             signUp.clickOnRegistrationButton();
             String timeNow = String.valueOf(System.currentTimeMillis());
-            reports.test.pass("Details", MediaEntityBuilder.createScreenCaptureFromPath(takeScreenShot(timeNow)).build());
+            ReportUtils.test.pass("The first test was pass successfully", MediaEntityBuilder.createScreenCaptureFromPath(takeScreenShot(timeNow)).build());
         }catch (Exception e) {
             e.printStackTrace();
-            reports.test.log(Status.FAIL, "Registration Button was not clicked" + e.getMessage());
+            ReportUtils.test.log(Status.FAIL, "Registration Button was not clicked" + e.getMessage());
         }
     }
 
@@ -42,10 +40,10 @@ public class SignUpTest {
             homePage.pickFromHome();
             assert homePage.getUrl().equals("https://buyme.co.il/search?budget=6&category=16&region=11");
             String timeNow = String.valueOf(System.currentTimeMillis());
-            reports.test.pass("Details", MediaEntityBuilder.createScreenCaptureFromPath(takeScreenShot(timeNow)).build());
+            ReportUtils.test.pass("\"The second test was pass successfully\"", MediaEntityBuilder.createScreenCaptureFromPath(takeScreenShot(timeNow)).build());
         }catch (Exception e) {
             e.printStackTrace();
-            reports.test.log(Status.FAIL, "Home Page URL was not found" + e.getMessage());
+            ReportUtils.test.log(Status.FAIL, "Home Page URL was not found" + e.getMessage());
         }
     }
 
@@ -56,16 +54,16 @@ public class SignUpTest {
             pickb.pickABusiness();
             assert pickb.getUrl().equals("https://buyme.co.il/money/752649?price=590");
             String timeNow = String.valueOf(System.currentTimeMillis());
-            reports.test.pass("Details", MediaEntityBuilder.createScreenCaptureFromPath(takeScreenShot(timeNow)).build());
+            ReportUtils.test.pass("\"The third test was pass successfully\"", MediaEntityBuilder.createScreenCaptureFromPath(takeScreenShot(timeNow)).build());
         }catch (Exception e) {
             e.printStackTrace();
-            reports.test.log(Status.FAIL, "Pick Business URL was not found" + e.getMessage());
+            ReportUtils.test.log(Status.FAIL, "Pick Business URL was not found" + e.getMessage());
         }
 
     }
 
     @Test
-    public void test04sendAndReceived() throws InterruptedException {
+    public void test04sendAndReceived() {
         try {
             SenderAndReceiverInfo sai = new SenderAndReceiverInfo();
             sai.receiver();
@@ -73,10 +71,10 @@ public class SignUpTest {
             sai.senderAndReceiver();
             Assert.assertEquals(sai.getSenderName(), "Sivan ");
             String timeNow = String.valueOf(System.currentTimeMillis());
-            reports.test.pass("Details", MediaEntityBuilder.createScreenCaptureFromPath(takeScreenShot(timeNow)).build());
+            ReportUtils.test.pass("\"The fourth test was pass successfully\"", MediaEntityBuilder.createScreenCaptureFromPath(takeScreenShot(timeNow)).build());
         }catch (Exception e) {
             e.printStackTrace();
-            reports.test.log(Status.FAIL, "" + e.getMessage());
+            ReportUtils.test.log(Status.FAIL, "" + e.getMessage());
         }
     }
 
