@@ -4,10 +4,13 @@ import BaseClasses.BasePage;
 import BaseClasses.BaseWebdriver;
 import Locators.HomeLocators;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+
+import static BaseClasses.BaseWebdriver.takeScreenShot;
 
 
 public class HomePage extends BasePage  {
@@ -35,6 +38,7 @@ public class HomePage extends BasePage  {
         wait.until(ExpectedConditions.elementToBeClickable(
                 clickElement(HomeLocators.AREA_DROPDOWN)));
         clickElement(HomeLocators.chooseFromDropDown(index));
+
     }
 
     private void pickCategory(int index){
